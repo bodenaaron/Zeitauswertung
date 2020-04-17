@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2" assembly="DynamicPDFCreator" namespace="DynamicPDFCreator">
+<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2" assembly="Zeitauswertung" namespace="Zeitauswertung">
 
   <class name = "Bearbeiter" table="tblBearbeiter">
-    <id name = "id" column="idBearbeiter">
+    <id name = "Id" column="idBearbeiter">
       <generator class = "identity"/>
     </id>
-    <property name = "email" column="Email"/>
-    <property name = "telefon" column="Telefon"/>
-    <property name = "bearbeiterName" column="Bearbeiter_Name"/>
-    <property name = "bearbeiterVorname" column="Bearbeiter_Vorname"/>
+    <property name = "Email" column="Email"/>
+    <property name = "Telefon" column="Telefon"/>
+    <property name = "BearbeiterName" column="Bearbeiter_Name"/>
+    <property name = "BearbeiterVorname" column="Bearbeiter_Vorname"/>
 
   </class>
 

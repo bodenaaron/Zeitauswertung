@@ -30,10 +30,15 @@
         {
             this.cmb_Bearbeiter = new System.Windows.Forms.ComboBox();
             this.lbl_bearbeiter = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.date_von = new System.Windows.Forms.DateTimePicker();
             this.lbl_von = new System.Windows.Forms.Label();
             this.lbl_bis = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.date_bis = new System.Windows.Forms.DateTimePicker();
+            this.btn_suchen = new System.Windows.Forms.Button();
+            this.table = new System.Windows.Forms.DataGridView();
+            this.lbl_gesamtstunden = new System.Windows.Forms.Label();
+            this.tb_gesamtstunden = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.SuspendLayout();
             // 
             // cmb_Bearbeiter
@@ -53,12 +58,12 @@
             this.lbl_bearbeiter.TabIndex = 1;
             this.lbl_bearbeiter.Text = "Bearbeiter";
             // 
-            // dateTimePicker1
+            // date_von
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(327, 7);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.date_von.Location = new System.Drawing.Point(327, 7);
+            this.date_von.Name = "date_von";
+            this.date_von.Size = new System.Drawing.Size(200, 20);
+            this.date_von.TabIndex = 2;
             // 
             // lbl_von
             // 
@@ -78,26 +83,74 @@
             this.lbl_bis.TabIndex = 5;
             this.lbl_bis.Text = "bis";
             // 
-            // dateTimePicker2
+            // date_bis
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(612, 7);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 4;
+            this.date_bis.Location = new System.Drawing.Point(612, 7);
+            this.date_bis.Name = "date_bis";
+            this.date_bis.Size = new System.Drawing.Size(200, 20);
+            this.date_bis.TabIndex = 4;
+            // 
+            // btn_suchen
+            // 
+            this.btn_suchen.Location = new System.Drawing.Point(830, 7);
+            this.btn_suchen.Name = "btn_suchen";
+            this.btn_suchen.Size = new System.Drawing.Size(109, 23);
+            this.btn_suchen.TabIndex = 6;
+            this.btn_suchen.Text = "suchen";
+            this.btn_suchen.UseVisualStyleBackColor = true;
+            this.btn_suchen.Click += new System.EventHandler(this.btn_suchen_Click);
+            // 
+            // table
+            // 
+            this.table.AllowUserToAddRows = false;
+            this.table.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table.Location = new System.Drawing.Point(8, 68);
+            this.table.Name = "table";
+            this.table.ReadOnly = true;
+            this.table.Size = new System.Drawing.Size(1131, 589);
+            this.table.TabIndex = 7;
+            // 
+            // lbl_gesamtstunden
+            // 
+            this.lbl_gesamtstunden.AutoSize = true;
+            this.lbl_gesamtstunden.Location = new System.Drawing.Point(14, 43);
+            this.lbl_gesamtstunden.Name = "lbl_gesamtstunden";
+            this.lbl_gesamtstunden.Size = new System.Drawing.Size(138, 13);
+            this.lbl_gesamtstunden.TabIndex = 8;
+            this.lbl_gesamtstunden.Text = "Gesamtstunden im Zeitraum";
+            // 
+            // tb_gesamtstunden
+            // 
+            this.tb_gesamtstunden.Enabled = false;
+            this.tb_gesamtstunden.Location = new System.Drawing.Point(159, 43);
+            this.tb_gesamtstunden.Name = "tb_gesamtstunden";
+            this.tb_gesamtstunden.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tb_gesamtstunden.Size = new System.Drawing.Size(70, 20);
+            this.tb_gesamtstunden.TabIndex = 9;
+            this.tb_gesamtstunden.Text = "0";
+            this.tb_gesamtstunden.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 669);
+            this.Controls.Add(this.tb_gesamtstunden);
+            this.Controls.Add(this.lbl_gesamtstunden);
+            this.Controls.Add(this.table);
+            this.Controls.Add(this.btn_suchen);
             this.Controls.Add(this.lbl_bis);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.date_bis);
             this.Controls.Add(this.lbl_von);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.date_von);
             this.Controls.Add(this.lbl_bearbeiter);
             this.Controls.Add(this.cmb_Bearbeiter);
             this.Name = "MainForm";
             this.Text = "Zeitauswertung";
+            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,10 +160,14 @@
 
         private System.Windows.Forms.ComboBox cmb_Bearbeiter;
         private System.Windows.Forms.Label lbl_bearbeiter;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker date_von;
         private System.Windows.Forms.Label lbl_von;
         private System.Windows.Forms.Label lbl_bis;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker date_bis;
+        private System.Windows.Forms.Button btn_suchen;
+        private System.Windows.Forms.DataGridView table;
+        private System.Windows.Forms.Label lbl_gesamtstunden;
+        public System.Windows.Forms.TextBox tb_gesamtstunden;
     }
 }
 

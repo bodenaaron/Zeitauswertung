@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2" assembly="DynamicPDFCreator" namespace="DynamicPDFCreator">
+<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2" assembly="Zeitauswertung" namespace="Zeitauswertung">
 
   <class name = "Stundenbuchung" table="tblAuftragStunden">
-    <id name = "id" column="idAuftragStunden">
+    <id name = "Id" column="idAuftragStunden">
       <generator class = "identity"/>
     </id>
-    <many-to-one name="Bearbeiter"/>
+    <!--<many-to-one name="idBearbeiter"/>-->
+    <property name="Bearbeiter" column="idBearbeiter"/>
     <property name = "Auftrag" column="idAuftrag"/>
     <property name = "Datum" column="Datum"/>
     <property name = "Bemerkung" column="Bemerkung"/>
@@ -15,7 +16,7 @@
     <property name = "Erstellt" column="CreateDate"/>
     <property name = "Updated" column="UpdateDate"/>
     <property name = "Geloescht" column="[Gelöscht]"/>
-    <many-to-one name="Zeittyp"/>
+    <many-to-one name="idZeittyp" lazy="false"/>
 
   </class>
 

@@ -8,6 +8,6 @@ namespace Zeitauswertung
 {
     public class Zeittyp
     {
-        public virtual string id { get; set; }
+        public virtual string Id { get; set; }
     }
 }

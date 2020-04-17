@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2" assembly="DynamicPDFCreator" namespace="DynamicPDFCreator">
+<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2" assembly="Zeitauswertung" namespace="Zeitauswertung">
 
   <class name = "Zeittyp" table="tblZeittypen">
-    <id name = "id" column="idZeittyp">
+    <id name = "Id" column="idZeittyp">
       <generator class = "identity"/>
     </id>    
   </class>

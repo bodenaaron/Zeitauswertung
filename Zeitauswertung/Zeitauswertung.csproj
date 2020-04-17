@@ -67,6 +67,7 @@
     <Compile Include="DBManager.cs" />
     <Compile Include="Entities\Bearbeiter.cs" />
     <Compile Include="Entities\Stundenbuchung.cs" />
+    <Compile Include="Entities\TableBuchung.cs" />
     <Compile Include="Entities\Zeittyp.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -103,7 +104,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="hibernate.cfg.xml" />
+    <EmbeddedResource Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mapping\Stundenbuchung.hbm.xml" />
     <EmbeddedResource Include="Mapping\Zeittyp.hbm.xml" />
     <EmbeddedResource Include="Mapping\Bearbeiter.hbm.xml" />
