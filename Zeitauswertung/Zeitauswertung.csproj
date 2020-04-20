@@ -69,6 +69,7 @@
     <Compile Include="Entities\Stundenbuchung.cs" />
     <Compile Include="Entities\TableBuchung.cs" />
     <Compile Include="Entities\Zeittyp.cs" />
+    <Compile Include="Entities\Auftrag.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +112,8 @@
     <EmbeddedResource Include="Mapping\Zeittyp.hbm.xml" />
     <EmbeddedResource Include="Mapping\Bearbeiter.hbm.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Auftrag.hbm.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

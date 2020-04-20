@@ -38,6 +38,12 @@
             this.table = new System.Windows.Forms.DataGridView();
             this.lbl_gesamtstunden = new System.Windows.Forms.Label();
             this.tb_gesamtstunden = new System.Windows.Forms.TextBox();
+            this.lbl_gearbeitet = new System.Windows.Forms.Label();
+            this.tb_gearbeitet = new System.Windows.Forms.TextBox();
+            this.tb_urlaub = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_krank = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +122,7 @@
             // lbl_gesamtstunden
             // 
             this.lbl_gesamtstunden.AutoSize = true;
-            this.lbl_gesamtstunden.Location = new System.Drawing.Point(14, 43);
+            this.lbl_gesamtstunden.Location = new System.Drawing.Point(15, 46);
             this.lbl_gesamtstunden.Name = "lbl_gesamtstunden";
             this.lbl_gesamtstunden.Size = new System.Drawing.Size(138, 13);
             this.lbl_gesamtstunden.TabIndex = 8;
@@ -133,11 +139,75 @@
             this.tb_gesamtstunden.Text = "0";
             this.tb_gesamtstunden.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // lbl_gearbeitet
+            // 
+            this.lbl_gearbeitet.AutoSize = true;
+            this.lbl_gearbeitet.Location = new System.Drawing.Point(265, 46);
+            this.lbl_gearbeitet.Name = "lbl_gearbeitet";
+            this.lbl_gearbeitet.Size = new System.Drawing.Size(56, 13);
+            this.lbl_gearbeitet.TabIndex = 10;
+            this.lbl_gearbeitet.Text = "Gearbeitet";
+            // 
+            // tb_gearbeitet
+            // 
+            this.tb_gearbeitet.Enabled = false;
+            this.tb_gearbeitet.Location = new System.Drawing.Point(327, 43);
+            this.tb_gearbeitet.Name = "tb_gearbeitet";
+            this.tb_gearbeitet.Size = new System.Drawing.Size(64, 20);
+            this.tb_gearbeitet.TabIndex = 11;
+            this.tb_gearbeitet.Text = "0";
+            this.tb_gearbeitet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tb_urlaub
+            // 
+            this.tb_urlaub.Enabled = false;
+            this.tb_urlaub.Location = new System.Drawing.Point(457, 43);
+            this.tb_urlaub.Name = "tb_urlaub";
+            this.tb_urlaub.Size = new System.Drawing.Size(64, 20);
+            this.tb_urlaub.TabIndex = 13;
+            this.tb_urlaub.Text = "0";
+            this.tb_urlaub.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Location = new System.Drawing.Point(413, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Urlaub";
+            // 
+            // tb_krank
+            // 
+            this.tb_krank.Enabled = false;
+            this.tb_krank.Location = new System.Drawing.Point(589, 43);
+            this.tb_krank.Name = "tb_krank";
+            this.tb_krank.Size = new System.Drawing.Size(64, 20);
+            this.tb_krank.TabIndex = 15;
+            this.tb_krank.Text = "0";
+            this.tb_krank.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(548, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Krank";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 669);
+            this.Controls.Add(this.tb_krank);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tb_urlaub);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tb_gearbeitet);
+            this.Controls.Add(this.lbl_gearbeitet);
             this.Controls.Add(this.tb_gesamtstunden);
             this.Controls.Add(this.lbl_gesamtstunden);
             this.Controls.Add(this.table);
@@ -168,6 +238,12 @@
         private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.Label lbl_gesamtstunden;
         public System.Windows.Forms.TextBox tb_gesamtstunden;
+        private System.Windows.Forms.Label lbl_gearbeitet;
+        private System.Windows.Forms.TextBox tb_gearbeitet;
+        private System.Windows.Forms.TextBox tb_urlaub;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_krank;
+        private System.Windows.Forms.Label label2;
     }
 }
 

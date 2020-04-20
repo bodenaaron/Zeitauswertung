@@ -7,8 +7,8 @@
       <generator class = "identity"/>
     </id>
     <!--<many-to-one name="idBearbeiter"/>-->
-    <property name="Bearbeiter" column="idBearbeiter"/>
-    <property name = "Auftrag" column="idAuftrag"/>
+    <property name = "Bearbeiter" column="idBearbeiter"/>
+    <many-to-one name = "idAuftrag" lazy="false"/>
     <property name = "Datum" column="Datum"/>
     <property name = "Bemerkung" column="Bemerkung"/>
     <property name = "Von" column="Von"/>

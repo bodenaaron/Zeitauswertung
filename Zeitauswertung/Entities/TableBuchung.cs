@@ -14,7 +14,7 @@ namespace Zeitauswertung
         public int Id { get; set; }
         [Browsable(false)]
         public string Bearbeiter { get; set; }
-        public int Auftrag { get; set; }
+        public String Auftrag { get; set; }
         public DateTime Datum { get; set; }
         public string Bemerkung { get; set; }
         public string Von { get; set; }
@@ -31,7 +31,10 @@ namespace Zeitauswertung
         {
             Id = buchung.Id;
             Bearbeiter = buchung.Bearbeiter;
-            Auftrag = buchung.Auftrag;
+            if (buchung.idAuftrag!=null)
+            {
+                Auftrag = buchung.idAuftrag.SMNummer;
+            }            
             Datum = buchung.Datum;
             Bemerkung = buchung.Bemerkung;
             Von = buchung.Von.ToString("HH:mm") ;

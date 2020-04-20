@@ -14,7 +14,7 @@ namespace Zeitauswertung
         public virtual int Id { get; set; }
         [Browsable(false)]
         public virtual string Bearbeiter { get; set; }
-        public virtual int Auftrag { get; set; }
+        public virtual Auftrag idAuftrag { get; set; }
         public virtual DateTime Datum { get; set; }
         public virtual string Bemerkung { get; set; }
         public virtual DateTime Von { get; set; }
