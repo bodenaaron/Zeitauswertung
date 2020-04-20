@@ -31,13 +31,17 @@ namespace Zeitauswertung
 
         private void btn_suchen_Click(object sender, EventArgs e)
         {
+            tb_gesamtstunden.Text = "0";
+            TimeSpan gesamtDauer = TimeSpan.Zero;
             if (cmb_Bearbeiter.SelectedItem!=null)
             {
                 List<TableBuchung>tb = DB.GetBuchungen(((KeyValuePair<string, Bearbeiter>)cmb_Bearbeiter.SelectedItem).Value,date_von.Value,date_bis.Value);
 
                 foreach (TableBuchung t in tb)
                 {
-                    tb_gesamtstunden.Text = (Convert.ToDouble(tb_gesamtstunden.Text) + t.dauer).ToString();
+                    TimeSpan dauer = (gesamtDauer + t.dauer);
+                    tb_gesamtstunden.Text = string.Format("{0}:{1}",dauer.Days*24+dauer.Hours,dauer.Minutes);
+                    gesamtDauer = dauer;
                 }
                 table.DataSource= tb.OrderByDescending(a => a.Datum).ToList();
             }

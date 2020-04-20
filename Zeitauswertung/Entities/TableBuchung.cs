@@ -25,7 +25,7 @@ namespace Zeitauswertung
         [Browsable(false)]
         public bool Geloescht { get; set; }
         public string Zeittyp { get; set; }
-        public double dauer { get; set; }
+        public TimeSpan dauer { get; set; }
 
         public TableBuchung(Stundenbuchung buchung)
         {
@@ -40,7 +40,7 @@ namespace Zeitauswertung
             Updated = buchung.Updated;
             Geloescht = buchung.Geloescht;
             Zeittyp = buchung.idZeittyp.Id;
-            dauer = (DateTime.Parse(Bis) - DateTime.Parse(Von)).TotalHours ;
+            dauer = (DateTime.Parse(Bis) - DateTime.Parse(Von)) ;
         }
     }
 }

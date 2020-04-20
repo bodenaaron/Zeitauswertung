@@ -3,6 +3,7 @@ using NHibernate.Cfg;
 using NHibernate.Criterion;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,11 +63,18 @@ namespace Zeitauswertung
             ISession session = GetSession();
             ITransaction tx = session.BeginTransaction();
 
+            
+            //Tag abziehen
+            von = von.AddDays(-1);
+            //Tag hinzufügen
+            bis = bis.AddDays(1);            
+
             ICriteria crit = session.CreateCriteria<Stundenbuchung>();
             crit.Add(Expression.Like(nameof(Stundenbuchung.Bearbeiter), bearbeiter.Id ));
-            crit.Add(Expression.Between(nameof(Stundenbuchung.Datum), von, bis));
-            //crit.Add(Expression.Or(Expression.Between(nameof(Stundenbuchung.Datum), von, bis), Expression.Eq(nameof(Stundenbuchung.Datum), von.ToString(""))));
-            List<Stundenbuchung> buchungen = (List<Stundenbuchung>)crit.List<Stundenbuchung>();            
+            crit.Add(Expression.Between(nameof(Stundenbuchung.Datum), von, bis));            
+             //crit.Add(Expression.Or(Expression.Between("DATE(Datum)", von, bis), Expression.Eq(nameof(Stundenbuchung.Datum), von.ToString(""))));
+             //crit.Add(Expression.Or(Expression.Between(nameof(Stundenbuchung.Datum), von, bis), Expression.Eq(nameof(Stundenbuchung.Datum), von.ToString(""))));
+             List <Stundenbuchung> buchungen = (List<Stundenbuchung>)crit.List<Stundenbuchung>();            
             
             CloseSession(session, tx);
             List<TableBuchung> tb = new List<TableBuchung>();
