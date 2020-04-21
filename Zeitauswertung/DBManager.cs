@@ -58,16 +58,17 @@ namespace Zeitauswertung
             CloseSession(session, tx);
         }
 
-        public List<TableBuchung> GetBuchungen(Bearbeiter bearbeiter, DateTime von, DateTime bis)
+        public List<TableBuchung> GetBuchungen(Bearbeiter bearbeiter, DateTime vonI, DateTime bisI)
         {
             ISession session = GetSession();
             ITransaction tx = session.BeginTransaction();
 
-            
+            DateTime von = new DateTime(vonI.Year, vonI.Month, vonI.Day);
+            DateTime bis = new DateTime(bisI.Year, bisI.Month, bisI.Day);
             //Tag abziehen
-            von = von.AddDays(-1);
+            //von = von.AddDays(-1);
             //Tag hinzufügen
-            bis = bis.AddDays(1);            
+            //bis = bis.AddDays(1);            
 
             ICriteria crit = session.CreateCriteria<Stundenbuchung>();
             crit.Add(Expression.Like(nameof(Stundenbuchung.Bearbeiter), bearbeiter.Id ));
