@@ -39,6 +39,9 @@
     <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Nager.Date, Version=1.25.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nager.Date.1.25.10\lib\net461\Nager.Date.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate, Version=5.2.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.5.2.7\lib\net461\NHibernate.dll</HintPath>
     </Reference>
@@ -64,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateChecker.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Entities\Bearbeiter.cs" />
     <Compile Include="Entities\Stundenbuchung.cs" />
